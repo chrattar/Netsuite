@@ -2,3 +2,5 @@
 
 
 Netsuite scripts
+
+Functional scripting module
