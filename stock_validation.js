@@ -59,3 +59,5 @@ define(['N/record', 'N/search', 'N/error', 'N/log'],
             beforeSubmit: beforeSubmit
         };
     });
+
+/** Add addtional notes regarding multiple item issues **/
