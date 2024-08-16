@@ -1,0 +1,8 @@
+WEB
+1
+https://######.app.netsuite.com/app/reporting/webquery.nl?compid=######&entity=###&email=["emailaddress","Please enter your email address:"]&role=#&cr=### &hash=hash here
+Selection=EntirePage
+Formatting=All
+PreFormattedTextToColumns=True
+ConsecutiveDelimitersAsOne=True
+SingleBlockTextImport=False
