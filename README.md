@@ -6,4 +6,4 @@ For the new user, there is also some difficultly in navigating the differing rep
 
 My hope with this repository is to provide a place for other Netsuite users (especially new users or less technical users to find a quick and easy way to get results.
 
-Saved Searches vs Reports:
+#Saved Searches vs Reports:
