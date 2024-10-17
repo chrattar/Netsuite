@@ -32,3 +32,19 @@ CASE WHEN(
     (CASE WHEN {type} = 'Sales Order' AND {custbody_fieldname} IS NOT NULL THEN {custbody_fieldname})
 ) THEN {amount}
 ELSE NULL  END
+
+
+/* DECODE STRING */
+
+decode({type},'Sales Order', {status})
+decode({type},'Sales Order',{applyingtransaction.trandate})
+decode({type},'Sales Order',({custbody_p_job_name}))
+decode({type},'Sales Order',{applyingtransaction.quantityuom})
+decode({type},'Sales Order',{fulfillingtransaction.quantityuom})
+decode({type},'Sales Order',({amount}))
+decode({type},'Sales Order',{applyingtransaction.amount})
+decode({type},'Sales Order',{fulfillingtransaction.cogsamount})
+decode({type},'Sales Order',{applyingtransaction.amount})-decode({type},'Sales Order',{fulfillingtransaction.cogsamount},0)
+(decode({type},'Sales Order',{applyingtransaction.rate}))-((decode({type},'Sales Order',{fulfillingtransaction.cogsamount},0))/{fulfillingtransaction.quantity})
+decode({type},'Sales Order',({applyingtransaction.amount}/{applyingtransaction.quantity}))
+decode({type},'Item Receipt',{trandate})
