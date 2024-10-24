@@ -8,3 +8,5 @@ My hope with this repository is to provide a place for other Netsuite users (esp
 
 ### Saved Searches vs Reports:
 ##### Location Availabe - SO: This allows you to pull the current available stock for the location that is identified in the header of the transaction. By default, Netsuite will only allow you to reutrn the TOTAL AVAILABLE STOCK for the Subsidiary, not the location specific value for the Transaction Sublist Items.
+
+Can we convert any of this to Rust?
