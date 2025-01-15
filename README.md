@@ -9,4 +9,7 @@ My hope with this repository is to provide a place for other Netsuite users (esp
 ### Saved Searches vs Reports:
 ##### Location Available - SO: This allows you to pull the current available stock for the location that is identified in the header of the transaction. By default, Netsuite will only allow you to reutrn the TOTAL AVAILABLE STOCK for the Subsidiary, not the location specific value for the Transaction Sublist Items.
 
+##### Scheduling Cycle Count
 
+##### Creating a Gross Margin Calculator Based on Sales Orders and Shipment
+The idea here is that all Netsuite documents have a parent. For Item Fulfillment (Shipments in our parlance) and Invoices, these are the children of the Sales Order. We are pulling the sales amount from the sales order to serve as a proxy for the invoiced value. This is because the invoice will pull the correct price at time of shipment.
