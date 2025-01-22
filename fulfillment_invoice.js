@@ -6,27 +6,37 @@ define(['N/search', 'N/log'], function (search, log) {
     function onRequest(context) {
         try {
             const filters = [
-                ['type', 'anyof', 'ItemShip'], // Filter for Item Fulfillments
+                [
+                    ['type', 'anyof', 'ItemShip'], // First condition: ItemShip
+                    'OR',
+                    ['type', 'anyof', 'Invoice']  // Second condition: Invoice
+                ],
                 'AND',
-                ['mainline', 'is', 'T'], // Only mainline records
+                ['mainline', 'is', 'F'], // Only line-level records (mainline = false)
                 'AND',
-                ['trandate', 'within', 'thisfiscalyear'] // Current fiscal year
+                ['trandate', 'within', 'thisfiscalyear'], // Transactions within the current fiscal year
+                'AND',
+                ['entity', 'isnot', '@NONE@'] // Entity must not be empty or null
             ];
 
             const columns = [
                 search.createColumn({ name: 'internalid' }),
                 search.createColumn({ name: 'tranid' }),
                 search.createColumn({ name: 'amount' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
-                search.createColumn({ name: 'entity' }),
+                search.createColumn({ name: 'custbody_acs_fld_invoice_created' }),
+                search.createColumn({ name: 'location' }),
+                search.createColumn({ name: 'cogsamount' }),
+                search.createColumn({ name: 'salesrep' }),
+                search.createColumn({ name: 'createdfrom' }),
+                search.createColumn({ name: 'cogsamount' }),
+                search.createColumn({ name: 'cogsamount' }),
+                search.createColumn({ name: 'cogsamount' }),
+                search.createColumn({ name: 'cogsamount' }),
+                search.createColumn({ name: 'cogsamount' }),
+                search.createColumn({ name: 'cogsamount' }),
+                search.createColumn({ name: 'cogsamount' }),
+                search.createColumn({ name: 'cogsamount' }),
+
                 search.createColumn({ name: 'trandate' })
             ];
 
@@ -60,6 +70,10 @@ define(['N/search', 'N/log'], function (search, log) {
                     id: result.getValue({ name: 'internalid' }),
                     tranid: result.getValue({ name: 'tranid' }),
                     entity: result.getText({ name: 'entity' }),
+                    amount: result.getValue({name: 'amount'}),
+                    amount_cogs: result.getValue({name: 'cogsamount'}),
+                    createdfrom: result.getText({name: 'createdfrom'}),
+                    invoice_num_sh: result.getText({ name: 'custbody_acs_fld_invoice_created' }),
                     date: result.getValue({ name: 'trandate' })
                 });
             });
