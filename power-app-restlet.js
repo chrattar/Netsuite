@@ -54,6 +54,7 @@ define(['N/search', 'N/log'], function (search, log) {
                     email: result.getValue({ name: 'email' }),
                     phone: result.getValue({ name: 'phone' }),
                     status: result.getText({ name: 'status' })
+                    /* add additional results in this block */
                 });
             });
         });
