@@ -31,5 +31,10 @@ Assorted Saved Search Groups - (Saved-Search-Syntax.sql):
   <li></li></li>
 </ul>
 
-##### Creating a Gross Margin Calculator Based on Sales Orders and Shipment
-The idea here is that all Netsuite documents have a parent. For Item Fulfillment (Shipments in our parlance) and Invoices, these are the children of the Sales Order. We are pulling the sales amount from the sales order to serve as a proxy for the invoiced value. This is because the invoice will pull the correct price at time of shipment.
+Assorted Ratio Templates - (ratios-bw-fields.sql):
+<ul>
+  <li>/* Ratio Between Two Values, Percent Change */ /*FPERCENT | SUM | */
+  /*Field Data: Type = string, status = string, custbody = INT*/</li>
+  <li>/* Ratio Between Two Values, Percent Change */ /*FPERCENT | SUM | */
+  /*Field Data: Type = string, status = string, custbody = INT*/</li>
+</ul>
