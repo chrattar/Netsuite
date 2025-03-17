@@ -6,11 +6,19 @@ For the new user, there is also some difficultly in navigating the differing rep
 
 My hope with this repository is to provide a place for other Netsuite users (especially new users or less technical users to find a quick and easy way to get results.
 
-### Saved Searches:
-####Location Available - SO: 
+### Scripts:
+Location Available - SO (location-available-so.js): 
 This allows you to pull the current available stock for the location that is identified in the header of the transaction. By default, Netsuite will only allow you to reutrn the TOTAL AVAILABLE STOCK for the Subsidiary, not the location specific value for the Transaction Sublist Items.
 
+### Saved Search Templates:
+
 ##### Scheduling Cycle Count
+Mass Date Comparison Templates (ns-ss-date-comparisons.sql): 
+A range of templates for Netsuite Saved Searches relating to date functions.
+<ul>
+  <li>{trandate}) is between January 1st of the current year and today's date (SYSDATE).</li>
+    <li>{trandate}) is between January 1st of the current year and today's date (SYSDATE).</li>
+</ul>
 
 ##### Creating a Gross Margin Calculator Based on Sales Orders and Shipment
 The idea here is that all Netsuite documents have a parent. For Item Fulfillment (Shipments in our parlance) and Invoices, these are the children of the Sales Order. We are pulling the sales amount from the sales order to serve as a proxy for the invoiced value. This is because the invoice will pull the correct price at time of shipment.
