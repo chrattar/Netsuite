@@ -10,16 +10,25 @@ My hope with this repository is to provide a place for other Netsuite users (esp
 Location Available - SO (location-available-so.js): 
 This allows you to pull the current available stock for the location that is identified in the header of the transaction. By default, Netsuite will only allow you to reutrn the TOTAL AVAILABLE STOCK for the Subsidiary, not the location specific value for the Transaction Sublist Items.
 
-### Saved Search Templates:
-
-##### Scheduling Cycle Count
-Mass Date Comparison Templates (ns-ss-date-comparisons.sql): 
+### Saved Search Syntax Templates:
+<u>Mass Date Comparison Templates</u> (ns-ss-date-comparisons.sql): 
 A range of templates for Netsuite Saved Searches relating to date functions. Each function is broken up in the .sql file with the comments for each block listed below for easy search.
 <ul>
   <li>/* ({trandate}) is between January 1st of the current year and today's date (SYSDATE). */</li>
   <li>/*Similar to Above, but shifts back to the previous year</li>
   <li>/*Change Percentage of the above two YTD for this year vs last year to durrent date*/</li>
   <li>/* MONTHS Current Year*/</li>
+  <li>/* Current Month, Current Year, Sum Invoiced Sales */</li>
+  <li>/* Current Month, Last Year, Sum Invoiced Sales */</li>
+  <li>/* MONTHS Current Year*/ AND /* MONTHS Last Year*/ (One row for every month of year.)</li>
+  <li>/* CHANGE MONTH OVER MONTH PERCENTAGE */</li>
+  <li>/*DATE BLOCKS*/(Massive Date Block Range to Sum {amount} (or whatever you want here}  by month individually.)</li>
+</ul>
+
+Assorted Saved Search Groups - (Saved-Search-Syntax.sql):
+<ul>
+  <li>Decode Strings of form decode({type},'Sales Order', {status}) or decode({type},'Sales Order',{applyingtransaction.trandate}) </li>
+  <li></li></li>
 </ul>
 
 ##### Creating a Gross Margin Calculator Based on Sales Orders and Shipment
