@@ -14,10 +14,12 @@ This allows you to pull the current available stock for the location that is ide
 
 ##### Scheduling Cycle Count
 Mass Date Comparison Templates (ns-ss-date-comparisons.sql): 
-A range of templates for Netsuite Saved Searches relating to date functions.
+A range of templates for Netsuite Saved Searches relating to date functions. Each function is broken up in the .sql file with the comments for each block listed below for easy search.
 <ul>
-  <li>{trandate}) is between January 1st of the current year and today's date (SYSDATE).</li>
-    <li>{trandate}) is between January 1st of the current year and today's date (SYSDATE).</li>
+  <li>/* ({trandate}) is between January 1st of the current year and today's date (SYSDATE). */</li>
+  <li>/*Similar to Above, but shifts back to the previous year</li>
+  <li>/*Change Percentage of the above two YTD for this year vs last year to durrent date*/</li>
+  <li>/* MONTHS Current Year*/</li>
 </ul>
 
 ##### Creating a Gross Margin Calculator Based on Sales Orders and Shipment
