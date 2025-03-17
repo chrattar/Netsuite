@@ -7,7 +7,7 @@ BETWEEN TO_DATE(TO_CHAR(SYSDATE, 'YYYY') || '-01-01', 'YYYY-MM-DD')
 AND SYSDATE 
 THEN {amount} 
 ELSE 0 END
-/*Similar to Above, but shifts back to the previous year*/
+/*({trandate}) is between January 1st of the current year and today's date (SYSDATE) in previous year*/
 CASE WHEN {trandate} 
 BETWEEN ADD_MONTHS(TO_DATE(TO_CHAR(SYSDATE, 'YYYY') || '-01-01', 'YYYY-MM-DD'), -12) 
 AND ADD_MONTHS(SYSDATE, -12) 
