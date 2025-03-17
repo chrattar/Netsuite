@@ -6,8 +6,9 @@ For the new user, there is also some difficultly in navigating the differing rep
 
 My hope with this repository is to provide a place for other Netsuite users (especially new users or less technical users to find a quick and easy way to get results.
 
-### Saved Searches vs Reports:
- Location Available - SO: This allows you to pull the current available stock for the location that is identified in the header of the transaction. By default, Netsuite will only allow you to reutrn the TOTAL AVAILABLE STOCK for the Subsidiary, not the location specific value for the Transaction Sublist Items.
+### Saved Searches:
+####Location Available - SO: 
+This allows you to pull the current available stock for the location that is identified in the header of the transaction. By default, Netsuite will only allow you to reutrn the TOTAL AVAILABLE STOCK for the Subsidiary, not the location specific value for the Transaction Sublist Items.
 
 ##### Scheduling Cycle Count
 
