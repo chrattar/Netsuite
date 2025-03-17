@@ -6,11 +6,15 @@ For the new user, there is also some difficultly in navigating the differing rep
 
 My hope with this repository is to provide a place for other Netsuite users (especially new users or less technical users to find a quick and easy way to get results.
 
-### Scripts:
-Location Available - SO (location-available-so.js): 
-This allows you to pull the current available stock for the location that is identified in the header of the transaction. By default, Netsuite will only allow you to reutrn the TOTAL AVAILABLE STOCK for the Subsidiary, not the location specific value for the Transaction Sublist Items.
+### SCRIPTS:
 
-### Saved Search Syntax Templates:
+<ul>
+<li>Location Available - SO (location-available-so.js): 
+This allows you to pull the current available stock for the location that is identified in the header of the transaction. By default, Netsuite will only allow you to reutrn the TOTAL AVAILABLE STOCK for the Subsidiary, not the location specific value for the Transaction Sublist Items.</li>
+
+</ul>
+
+### SAVED SEARCH SYNTAX TEMPLATES:
 <u>Mass Date Comparison Templates</u> (ns-ss-date-comparisons.sql): 
 A range of templates for Netsuite Saved Searches relating to date functions. Each function is broken up in the .sql file with the comments for each block listed below for easy search.
 <ul>
