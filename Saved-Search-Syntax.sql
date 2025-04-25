@@ -82,3 +82,29 @@ decode({type},'Item Receipt',{trandate})
     0
   ))
 )
+
+
+
+
+
+ /* TWO YEARS YTD SUM */
+ (((CASE WHEN {account} IN ('30200 Sales') AND {trandate}  BETWEEN ADD_MONTHS(TO_DATE(TO_CHAR(SYSDATE, 'YYYY') || '-01-01', 'YYYY-MM-DD'), -24)  AND ADD_MONTHS(SYSDATE, -24)  THEN {amount}  ELSE 0 END) +
+ (CASE WHEN {account} IN ('30200 Sales', '30515 Other Income - Liquid Asphalt') AND {trandate}  BETWEEN ADD_MONTHS(TO_DATE(TO_CHAR(SYSDATE, 'YYYY') || '-01-01', 'YYYY-MM-DD'), -12)  AND ADD_MONTHS(SYSDATE, -12)  THEN {amount}  ELSE 0 END))
+ / NULLIF(2,0))
+
+/*AVG SALE 2 Years YTD*/
+  ( 
+   (CASE WHEN {account} IN ('30200 Sales', '30515 Other Income - Liquid Asphalt') AND {trandate}  BETWEEN ADD_MONTHS(TO_DATE(TO_CHAR(SYSDATE, 'YYYY') || '-01-01', 'YYYY-MM-DD'), -12)  AND ADD_MONTHS(SYSDATE, -12)  THEN {amount}  ELSE 0 END) +
+  CASE WHEN {account} IN ('30200 Sales') AND  {trandate}  BETWEEN TO_DATE(TO_CHAR(SYSDATE, 'YYYY') || '-01-01', 'YYYY-MM-DD')  AND SYSDATE  THEN {amount}  ELSE 0 END
+  )
+
+ / NULLIF(2,0)
+
+
+ /*AVG SALE 2 Years FY*/
+  ( 
+   CASE WHEN {account} = '30200 Sales' AND {trandate} BETWEEN TO_DATE('2023-01-01', 'YYYY-MM-DD') AND TO_DATE('2023-12-31', 'YYYY-MM-DD') THEN {amount} ELSE 0 END +
+CASE WHEN {account} = '30200 Sales' AND {trandate} BETWEEN TO_DATE('2024-01-01', 'YYYY-MM-DD') AND TO_DATE('2024-12-31', 'YYYY-MM-DD') THEN {amount} ELSE 0 END
+  )
+
+ / NULLIF(2,0)
